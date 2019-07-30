@@ -7,6 +7,7 @@ public class BankAccount {
 	private String email = "";
 	private String phoneNum = "";
 	private final double dailyLimit = 10.0;
+	private final double depositLimit = 50.0;
 		
 	public BankAccount(){
 		this.acc_num = 123456789;
@@ -39,7 +40,10 @@ public class BankAccount {
 		return this.phoneNum;
 	}
 	public void deposit(double amount){
-		this.balance += amount;
+		if(amount <= depositLimit)
+			this.balance += amount;
+		else 
+			System.out.println("Deposit amount exceeds the deposit limit. Only $50 allowed each transaction.");
 	}
 	public void withdraw(double amount){
 		if(this.balance >= amount && amount <= dailyLimit){
