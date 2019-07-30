@@ -16,7 +16,6 @@ public class BankAccount {
 		this.email = "hanx9607@gmail.com";
 		this.phoneNum = "6086224132";
 	}
-	
 	public BankAccount(long acc_num, double balance, String name, String email, String phoneNum){
 		this.acc_num = acc_num;
 		this.balance = balance;

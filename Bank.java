@@ -11,11 +11,14 @@ public class Bank {
 		System.out.println(customer.toString());
 		System.out.println();
 		do{
-		System.out.println("Welcome, what would you like to see today?");
+		System.out.println();
+		System.out.println("Welcome, what would you like to do today?");
+		System.out.println("-----------------------------------------");
 		System.out.println("1.Account Balance | 2.Deposit Money | 3.Withdraw Money | 4.Exit");
 		Scanner scnr = new Scanner(System.in);
-		
+		try{
 		choice = scnr.nextInt();
+		
 		switch(choice){
 			case 1:
 				System.out.println("Your account balance is: " + customer.getBalance());
@@ -34,7 +37,10 @@ public class Bank {
 				System.out.println("See you later.");
 				break;
 			default:
-				System.out.println("Please enter a vaild opition.");
+				System.out.println("Unrecognized choice.");
+		}
+		}catch (Exception e){
+			System.out.println("Please enter a vaild opition.");
 		}
 		}while(choice != 4);
 	}
