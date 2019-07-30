@@ -12,7 +12,7 @@ public class Bank {
 		System.out.println();
 		do{
 		System.out.println("Welcome, what would you like to see today?");
-		System.out.println("1.Account Balance  2.Deposit Money  3.Withdraw Money  4.Exit");
+		System.out.println("1.Account Balance | 2.Deposit Money | 3.Withdraw Money | 4.Exit");
 		Scanner scnr = new Scanner(System.in);
 		
 		choice = scnr.nextInt();

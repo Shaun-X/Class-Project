@@ -6,8 +6,8 @@ public class BankAccount {
 	private String name = "";
 	private String email = "";
 	private String phoneNum = "";
-	
-			
+	private final double dailyLimit = 10.0;
+		
 	public BankAccount(){
 		this.acc_num = 123456789;
 		this.balance = 50.0;
@@ -42,7 +42,15 @@ public class BankAccount {
 		this.balance += amount;
 	}
 	public void withdraw(double amount){
-		this.balance -= amount;
+		if(this.balance >= amount && amount <= dailyLimit){
+			this.balance -= amount;
+		}
+		else if(this.balance < amount){
+			System.out.println("Withdraw amount exceeds your balance.");
+		}
+		else if(amount > dailyLimit){
+			System.out.println("Withdraw amount exceeds the daily limit.");
+		}
 	}
 	public String toString(){
 		return "Customer's name is: " + this.name + "\n" + 
